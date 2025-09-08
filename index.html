@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>114學年度上學期二年級國語南一版 - 第七課等兔子來撞樹</title>
+    <title>第七課 等兔子來撞樹 - 字音字形重點整理</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,7 +14,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #e0f7fa 0%, #bbdefb 100%);
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
             color: #333;
             line-height: 1.6;
             padding: 20px;
@@ -56,9 +56,10 @@
             transition: all 0.3s;
         }
         
-        .nav-btn:hover {
+        .nav-btn:hover, .nav-btn.active {
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            background: linear-gradient(to right, #2E7D32, #1B5E20);
         }
         
         header {
@@ -83,6 +84,7 @@
             margin: 25px 0 15px;
             padding-bottom: 10px;
             border-bottom: 2px solid #C8E6C9;
+            scroll-margin-top: 100px;
         }
         
         h3 {
@@ -143,7 +145,7 @@
             margin-top: 5px;
         }
         
-        .similar-characters {
+        .similar-characters, .polyphonic-characters {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
@@ -176,11 +178,11 @@
             list-style-type: none;
             padding-left: 10px;
             margin-top: 10px;
+            font-size: 1.1rem;
         }
         
         .character-group li {
             padding: 8px 0;
-            font-size: 1.2rem;
             border-bottom: 1px dashed #C8E6C9;
         }
         
@@ -247,6 +249,7 @@
         .info-section h3 i {
             margin-right: 10px;
             color: #4CAF50;
+            font-size: 1.2rem;
         }
         
         .info-section ul {
@@ -326,8 +329,47 @@
             font-size: 1.2rem;
         }
         
-        .similar-characters .bopomofo {
+        .similar-characters .bopomofo, .polyphonic-characters .bopomofo {
             font-size: 0.7em;
+        }
+        
+        .vocabulary-recognition {
+            background: #F1F8E9;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .vocabulary-recognition h3 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #2E7D32;
+        }
+        
+        .recognition-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .recognition-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .section-highlight {
+            animation: highlight 2s ease;
+            box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.5);
+        }
+        
+        @keyframes highlight {
+            0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.8); }
+            70% { box-shadow: 0 0 0 20px rgba(76, 175, 80, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
         }
         
         @media (max-width: 900px) {
@@ -346,7 +388,7 @@
                 font-size: 100px;
             }
             
-            .similar-characters {
+            .similar-characters, .polyphonic-characters {
                 grid-template-columns: 1fr;
             }
             
@@ -358,6 +400,10 @@
             .quick-nav {
                 position: static;
                 margin-bottom: 20px;
+            }
+            
+            .recognition-list {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
         }
         
@@ -383,103 +429,93 @@
                 padding: 6px 10px;
                 font-size: 0.8rem;
             }
+            
+            .recognition-list {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="quick-nav">
-            <button class="nav-btn" onclick="scrollToSection('lesson-content')">課文內容</button>
-            <button class="nav-btn" onclick="scrollToSection('vocabulary')">生字總表</button>
-            <button class="nav-btn" onclick="scrollToSection('similar-characters')">形近字比較</button>
+            <button class="nav-btn" onclick="scrollToSection('lesson-content')">课文内容</button>
+            <button class="nav-btn" onclick="scrollToSection('vocabulary')">生字总表</button>
+            <button class="nav-btn" onclick="scrollToSection('similar-characters')">形近字比较</button>
+            <button class="nav-btn" onclick="scrollToSection('vocabulary-phrases')">语词学习</button>
         </div>
+        
         <header>
-            <h1><i class="fas fa-book-open"></i> 114學年度上學期二年級國語</h1>
-            <h2>南一版 - 第七課：等兔子來撞樹</h2>
+            <h1><i class="fas fa-book"></i> 第七課：等兔子來撞樹</h1>
+            <h2>字音字形重點整理</h2>
         </header>
         
         <section id="lesson-content">
             <h2><span class="section-icon">1</span> 課文內容</h2>
             <div class="lesson-content">
-                <p>第<span class="bopomofo">ㄉㄧˋ</span>七<span class="bopomofo">ㄑㄧ</span>課<span class="bopomofo">ㄎㄜˋ</span>　等<span class="bopomofo">ㄉㄥˇ</span>兔<span class="bopomofo">ㄊㄨˋ</span>子<span class="bopomofo">˙ㄗ</span>來<span class="bopomofo">ㄌㄞˊ</span>撞<span class="bopomofo">ㄓㄨㄤˋ</span>樹<span class="bopomofo">ㄕㄨˋ</span></p>
-                <p>一<span class="bopomofo">ㄧ</span>個<span class="bopomofo">˙ㄍㄜ</span>農<span class="bopomofo">ㄋㄨㄥˊ</span>夫<span class="bopomofo">ㄈㄨ</span></p>
-                <p>種<span class="bopomofo">ㄓㄨㄥˋ</span>了<span class="bopomofo">˙ㄌㄜ</span>一<span class="bopomofo">ㄧ</span>塊<span class="bopomofo">ㄎㄨㄞˋ</span>田<span class="bopomofo">ㄊㄧㄢˊ</span>，</p>
-                <p>田<span class="bopomofo">ㄊㄧㄢˊ</span>邊<span class="bopomofo">ㄅㄧㄢ</span>長<span class="bopomofo">ㄓㄤˇ</span>著<span class="bopomofo">˙ㄓㄜ</span>一<span class="bopomofo">ㄧ</span>棵<span class="bopomofo">ㄎㄜ</span>樹<span class="bopomofo">ㄕㄨˋ</span>。</p>
-                <p>夏<span class="bopomofo">ㄒㄧㄚˋ</span>天<span class="bopomofo">ㄊㄧㄢ</span>天<span class="bopomofo">ㄊㄧㄢ</span>氣<span class="bopomofo">ㄑㄧˋ</span>好<span class="bopomofo">ㄏㄠˇ</span>，</p>
-                <p>農<span class="bopomofo">ㄋㄨㄥˊ</span>夫<span class="bopomofo">ㄈㄨ</span>起<span class="bopomofo">ㄑㄧˇ</span>得<span class="bopomofo">˙ㄉㄜ</span>早<span class="bopomofo">ㄗㄠˇ</span>，</p>
-                <p>忙<span class="bopomofo">ㄇㄤˊ</span>著<span class="bopomofo">˙ㄓㄜ</span>去<span class="bopomofo">ㄑㄩˋ</span>除<span class="bopomofo">ㄔㄨˊ</span>草<span class="bopomofo">ㄘㄠˇ</span>。</p>
-                <br>
-                <p>除<span class="bopomofo">ㄔㄨˊ</span>草<span class="bopomofo">ㄘㄠˇ</span>的<span class="bopomofo">˙ㄉㄜ</span>工<span class="bopomofo">ㄍㄨㄥ</span>作<span class="bopomofo">ㄗㄨㄛˋ</span>剛<span class="bopomofo">ㄍㄤ</span>開<span class="bopomofo">ㄎㄞ</span>始<span class="bopomofo">ㄕˇ</span>，</p>
-                <p>一<span class="bopomofo">ㄧ</span>隻<span class="bopomofo">ㄓ</span>兔<span class="bopomofo">ㄊㄨˋ</span>子<span class="bopomofo">˙ㄗ</span>忙<span class="bopomofo">ㄇㄤˊ</span>趕<span class="bopomofo">ㄍㄢˇ</span>路<span class="bopomofo">ㄌㄨˋ</span>，</p>
-                <p>「<span class="bopomofo">ㄆㄥ</span>烹<span class="bopomofo">ㄆㄥ</span>」的<span class="bopomofo">˙ㄉㄜ</span>一<span class="bopomofo">ㄧ</span>聲<span class="bopomofo">ㄕㄥ</span>撞<span class="bopomofo">ㄓㄨㄤˋ</span>上<span class="bopomofo">ㄕㄤˋ</span>樹<span class="bopomofo">ㄕㄨˋ</span>，</p>
-                <p>農<span class="bopomofo">ㄋㄨㄥˊ</span>夫<span class="bopomofo">ㄈㄨ</span>幸<span class="bopomofo">ㄒㄧㄥˋ</span>運<span class="bopomofo">ㄩㄣˋ</span>得<span class="bopomofo">˙ㄉㄜ</span>到<span class="bopomofo">ㄉㄠˋ</span>一<span class="bopomofo">ㄧ</span>隻<span class="bopomofo">ㄓ</span>兔<span class="bopomofo">ㄊㄨˋ</span>。</p>
-                <br>
-                <p>那<span class="bopomofo">ㄋㄚˋ</span>天<span class="bopomofo">ㄊㄧㄢ</span>以<span class="bopomofo">ㄧˇ</span>後<span class="bopomofo">ㄏㄡˋ</span>，</p>
-                <p>農<span class="bopomofo">ㄋㄨㄥˊ</span>夫<span class="bopomofo">ㄈㄨ</span>田<span class="bopomofo">ㄊㄧㄢˊ</span>也<span class="bopomofo">ㄧㄝˇ</span>不<span class="bopomofo">ㄅㄨˋ</span>耕<span class="bopomofo">ㄍㄥ</span>，草<span class="bopomofo">ㄘㄠˇ</span>也<span class="bopomofo">ㄧㄝˇ</span>不<span class="bopomofo">ㄅㄨˋ</span>除<span class="bopomofo">ㄔㄨˊ</span>，</p>
-                <p>天<span class="bopomofo">ㄊㄧㄢ</span>天<span class="bopomofo">ㄊㄧㄢ</span>守<span class="bopomofo">ㄕㄡˇ</span>著<span class="bopomofo">˙ㄓㄜ</span>幸<span class="bopomofo">ㄒㄧㄥˋ</span>運<span class="bopomofo">ㄩㄣˋ</span>樹<span class="bopomofo">ㄕㄨˋ</span>，</p>
-                <p>等<span class="bopomofo">ㄉㄥˇ</span>著<span class="bopomofo">˙ㄓㄜ</span>兔<span class="bopomofo">ㄊㄨˋ</span>子<span class="bopomofo">˙ㄗ</span>來<span class="bopomofo">ㄌㄞˊ</span>撞<span class="bopomofo">ㄓㄨㄤˋ</span>樹<span class="bopomofo">ㄕㄨˋ</span>。</p>
-                <br>
-                <p>從<span class="bopomofo">ㄘㄨㄥˊ</span>白<span class="bopomofo">ㄅㄞˊ</span>天<span class="bopomofo">ㄊㄧㄢ</span>等<span class="bopomofo">ㄉㄥˇ</span>到<span class="bopomofo">ㄉㄠˋ</span>夜<span class="bopomofo">ㄧㄝˋ</span>晚<span class="bopomofo">ㄨㄢˇ</span>，</p>
-                <p>從<span class="bopomofo">ㄘㄨㄥˊ</span>夏<span class="bopomofo">ㄒㄧㄚˋ</span>天<span class="bopomofo">ㄊㄧㄢ</span>等<span class="bopomofo">ㄉㄥˇ</span>到<span class="bopomofo">ㄉㄠˋ</span>冬<span class="bopomofo">ㄉㄨㄥ</span>天<span class="bopomofo">ㄊㄧㄢ</span>，</p>
-                <p>等<span class="bopomofo">ㄉㄥˇ</span>啊<span class="bopomofo">ㄚ</span>等<span class="bopomofo">ㄉㄥˇ</span>，只<span class="bopomofo">ㄓˇ</span>有<span class="bopomofo">ㄧㄡˇ</span>北<span class="bopomofo">ㄅㄟˇ</span>風<span class="bopomofo">ㄈㄥ</span>搖<span class="bopomofo">ㄧㄠˊ</span>著<span class="bopomofo">˙ㄓㄜ</span>樹<span class="bopomofo">ㄕㄨˋ</span>。</p>
+                <p>第<span class="bopomofo">ㄑㄧ</span>七<span class="bopomofo">ㄎㄜˋ</span>課　<span class="bopomofo">ㄉㄥˇ</span>等<span class="bopomofo">ㄊㄨˋ</span>兔<span class="bopomofo">ㄗˇ</span>子<span class="bopomofo">ㄌㄞˊ</span>來<span class="bopomofo">ㄓㄨㄤˋ</span>撞<span class="bopomofo">ㄕㄨˋ</span>樹</p>
+                <p>　　<span class="bopomofo">ㄧ</span>一<span class="bopomofo">ㄍㄜˋ</span>個<span class="bopomofo">ㄋㄨㄥˊ</span>農<span class="bopomofo">ㄈㄨ</span>夫<span class="bopomofo">ㄓㄨㄥˋ</span>種<span class="bopomofo">ㄌㄜ˙</span>了<span class="bopomofo">ㄧ</span>一<span class="bopomofo">ㄎㄨㄞˋ</span>塊<span class="bopomofo">ㄊㄧㄢˊ</span>田，<span class="bopomofo">ㄊㄧㄢˊ</span>田<span class="bopomofo">ㄅㄧㄢ</span>邊<span class="bopomofo">ㄓㄤˇ</span>長<span class="bopomofo">ㄓㄜ</span>著<span class="bopomofo">ㄧ</span>一<span class="bopomofo">ㄎ</span>棵<span class="bopomofo">ㄕㄨˋ</span>樹。<span class="bopomofo">ㄒㄧㄚˋ</span>夏<span class="bopomofo">ㄊㄧㄢ</span>天<span class="bopomofo">ㄊㄧㄢ</span>天<span class="bopomofo">ㄑㄧˋ</span>氣<span class="bopomofo">ㄏㄠˇ</span>好，<span class="bopomofo">ㄋㄨㄥˊ</span>農<span class="bopomofo">ㄈㄨ</span>夫<span class="bopomofo">ㄑㄧˇ</span>起<span class="bopomofo">ㄉㄜˊ</span>得<span class="bopomofo">ㄗㄠˇ</span>早，<span class="bopomofo">ㄇㄤˊ</span>忙<span class="bopomofo">ㄓㄜ</span>著<span class="bopomofo">ㄑㄩˋ</span>去<span class="bopomofo">ㄔㄨˊ</span>除<span class="bopomofo">ㄘㄠˇ</span>草。</p>
+                <p>　　<span class="bopomofo">ㄔㄨˊ</span>除<span class="bopomofo">ㄘㄠˇ</span>草<span class="bopomofo">ㄉㄜ</span>的<span class="bopomofo">ㄍㄥ</span>工<span class="bopomofo">ㄗㄨㄛˋ</span>作<span class="bopomofo">ㄍㄤ</span>剛<span class="bopomofo">ㄎㄞ</span>開<span class="bopomofo">ㄕˇ</span>始，<span class="bopomofo">ㄧ</span>一<span class="bopomofo">ㄓ</span>隻<span class="bopomofo">ㄊㄨˋ</span>兔<span class="bopomofo">ㄗˇ</span>子<span class="bopomofo">ㄇㄤˊ</span>忙<span class="bopomofo">ㄍㄢˇ</span>趕<span class="bopomofo">ㄌㄨˋ</span>路，<span class="bopomofo">「ㄆㄥ」</span>的<span class="bopomofo">ㄧ</span>一<span class="bopomofo">ㄕㄥ</span>聲<span class="bopomofo">ㄓㄨㄤˋ</span>撞<span class="bopomofo">ㄕㄤˋ</span>上<span class="bopomofo">ㄕㄨˋ</span>樹，<span class="bopomofo">ㄋㄨㄥˊ</span>農<span class="bopomofo">ㄈㄨ</span>夫<span class="bopomofo">ㄒㄧㄥˋ</span>幸<span class="bopomofo">ㄩㄣˋ</span>運<span class="bopomofo">ㄉㄜˊ</span>得<span class="bopomofo">ㄉㄠˋ</span>到<span class="bopomofo">ㄧ</span>一<span class="bopomofo">ㄓ</span>隻<span class="bopomofo">ㄊㄨˋ</span>兔。</p>
+                <p>　　<span class="bopomofo">ㄋㄚˋ</span>那<span class="bopomofo">ㄊㄧㄢ</span>天<span class="bopomofo">ㄧˇ</span>以<span class="bopomofo">ㄏㄡˋ</span>後，<span class="bopomofo">ㄋㄨㄥˊ</span>農<span class="bopomofo">ㄈㄨ</span>夫<span class="bopomofo">ㄊㄧㄢˊ</span>田<span class="bopomofo">ㄧㄝˇ</span>也<span class="bopomofo">ㄅㄨˋ</span>不<span class="bopomofo">ㄍㄥ</span>耕，<span class="bopomofo">ㄘㄠˇ</span>草<span class="bopomofo">ㄧㄝˇ</span>也<span class="bopomofo">ㄅㄨˋ</span>不<span class="bopomofo">ㄔㄨˊ</span>除，<span class="bopomofo">ㄊㄧㄢ</span>天<span class="bopomofo">ㄊㄧㄢ</span>天<span class="bopomofo">ㄕㄡˇ</span>守<span class="bopomofo">ㄓㄜ</span>著<span class="bopomofo">ㄒㄧㄥˋ</span>幸<span class="bopomofo">ㄩㄣˋ</span>運<span class="bopomofo">ㄕㄨˋ</span>樹，<span class="bopomofo">ㄉㄥˇ</span>等<span class="bopomofo">ㄓㄜ</span>著<span class="bopomofo">ㄊㄨˋ</span>兔<span class="bopomofo">ㄗˇ</span>子<span class="bopomofo">ㄌㄞˊ</span>來<span class="bopomofo">ㄓㄨㄤˋ</span>撞<span class="bopomofo">ㄕㄨˋ</span>樹。</p>
+                <p>　　<span class="bopomofo">ㄘㄨㄥˊ</span>從<span class="bopomofo">ㄅㄞˊ</span>白<span class="bopomofo">ㄊㄧㄢ</span>天<span class="bopomofo">ㄉㄥˇ</span>等<span class="bopomofo">ㄉㄠˋ</span>到<span class="bopomofo">ㄧㄝˋ</span>夜<span class="bopomofo">ㄨㄢˇ</span>晚，<span class="bopomofo">ㄘㄨㄥˊ</span>從<span class="bopomofo">ㄒㄧㄚˋ</span>夏<span class="bopomofo">ㄊㄧㄢ</span>天<span class="bopomofo">ㄉㄥˇ</span>等<span class="bopomofo">ㄉㄠˋ</span>到<span class="bopomofo">ㄉㄨㄥ</span>冬<span class="bopomofo">ㄊㄧㄢ</span>天，<span class="bopomofo">ㄉㄥˇ</span>等<span class="bopomofo">ㄚ</span>啊<span class="bopomofo">ㄉㄥˇ</span>等，<span class="bopomofo">ㄓˇ</span>只<span class="bopomofo">ㄧㄡˇ</span>有<span class="bopomofo">ㄅㄟˇ</span>北<span class="bopomofo">ㄈㄥ</span>風<span class="bopomofo">ㄧㄠˊ</span>搖<span class="bopomofo">ㄓㄜ</span>著<span class="bopomofo">ㄕㄨˋ</span>樹。</p>
             </div>
         </section>
         
         <section id="vocabulary">
             <h2><span class="section-icon">2</span> 生字總表</h2>
             <div class="vocabulary-list">
-                <div class="vocabulary-item" onclick="showCharacterDetail('等', 'ㄉㄥˇ', '竹', 12, '上下結構', this)">
+                <div class="vocabulary-item" data-char="等" data-bopomofo="ㄉㄥˇ" data-radical="竹" data-strokes="12" data-structure="上下結構">
                     等 <span class="bopomofo-small">ㄉㄥˇ</span>
                 </div>
-                <div class="vocabulary-item" onclick="showCharacterDetail('兔', 'ㄊㄨˋ', '儿', 8, '上下結構', this)">
+                <div class="vocabulary-item" data-char="兔" data-bopomofo="ㄊㄨˋ" data-radical="儿" data-strokes="8" data-structure="上下結構">
                     兔 <span class="bopomofo-small">ㄊㄨˋ</span>
                 </div>
-                <div class="vocabulary-item" onclick="showCharacterDetail('撞', 'ㄓㄨㄤˋ', '手', 15, '左右結構', this)">
+                <div class="vocabulary-item" data-char="撞" data-bopomofo="ㄓㄨㄤˋ" data-radical="手" data-strokes="15" data-structure="左右結構">
                     撞 <span class="bopomofo-small">ㄓㄨㄤˋ</span>
                 </div>
-                <div class="vocabulary-item" onclick="showCharacterDetail('農', 'ㄋㄨㄥˊ', '辰', 13, '上下結構', this)">
+                <div class="vocabulary-item" data-char="農" data-bopomofo="ㄋㄨㄥˊ" data-radical="辰" data-strokes="13" data-structure="上下結構">
                     農 <span class="bopomofo-small">ㄋㄨㄥˊ</span>
                 </div>
-                <div class="vocabulary-item" onclick="showCharacterDetail('夫', 'ㄈㄨ', '大', 4, '獨體字', this)">
+                <div class="vocabulary-item" data-char="夫" data-bopomofo="ㄈㄨ" data-radical="大" data-strokes="4" data-structure="獨體結構">
                     夫 <span class="bopomofo-small">ㄈㄨ</span>
                 </div>
-                <div class="vocabulary-item" onclick="showCharacterDetail('夏', 'ㄒㄧㄚˋ', '夊', 10, '上下結構', this)">
+                <div class="vocabulary-item" data-char="夏" data-bopomofo="ㄒㄧㄚˋ" data-radical="夊" data-strokes="10" data-structure="上下結構">
                     夏 <span class="bopomofo-small">ㄒㄧㄚˋ</span>
                 </div>
-                <div class="vocabulary-item" onclick="showCharacterDetail('剛', 'ㄍㄤ', '刀', 10, '左右結構', this)">
+                <div class="vocabulary-item" data-char="剛" data-bopomofo="ㄍㄤ" data-radical="刀" data-strokes="10" data-structure="左右結構">
                     剛 <span class="bopomofo-small">ㄍㄤ</span>
                 </div>
-                <div class="vocabulary-item" onclick="showCharacterDetail('趕', 'ㄍㄢˇ', '走', 10, '半包圍結構', this)">
+                <div class="vocabulary-item" data-char="趕" data-bopomofo="ㄍㄢˇ" data-radical="走" data-strokes="10" data-structure="半包圍結構">
                     趕 <span class="bopomofo-small">ㄍㄢˇ</span>
                 </div>
-                <div class="vocabulary-item" onclick="showCharacterDetail('路', 'ㄌㄨˋ', '足', 13, '左右結構', this)">
+                <div class="vocabulary-item" data-char="路" data-bopomofo="ㄌㄨˋ" data-radical="足" data-strokes="13" data-structure="左右結構">
                     路 <span class="bopomofo-small">ㄌㄨˋ</span>
                 </div>
-                <div class="vocabulary-item" onclick="showCharacterDetail('幸', 'ㄒㄧㄥˋ', '干', 8, '上下結構', this)">
+                <div class="vocabulary-item" data-char="幸" data-bopomofo="ㄒㄧㄥˋ" data-radical="干" data-strokes="8" data-structure="上下結構">
                     幸 <span class="bopomofo-small">ㄒㄧㄥˋ</span>
                 </div>
-                <div class="vocabulary-item" onclick="showCharacterDetail('運', 'ㄩㄣˋ', '辵', 12, '半包圍結構', this)">
+                <div class="vocabulary-item" data-char="運" data-bopomofo="ㄩㄣˋ" data-radical="辵" data-strokes="12" data-structure="半包圍結構">
                     運 <span class="bopomofo-small">ㄩㄣˋ</span>
                 </div>
-                <div class="vocabulary-item" onclick="showCharacterDetail('以', 'ㄧˇ', '人', 4, '左右結構', this)">
+                <div class="vocabulary-item" data-char="以" data-bopomofo="ㄧˇ" data-radical="人" data-strokes="4" data-structure="左右結構">
                     以 <span class="bopomofo-small">ㄧˇ</span>
                 </div>
-                <div class="vocabulary-item" onclick="showCharacterDetail('耕', 'ㄍㄥ', '耒', 10, '左右結構', this)">
+                <div class="vocabulary-item" data-char="耕" data-bopomofo="ㄍㄥ" data-radical="耒" data-strokes="10" data-structure="左右結構">
                     耕 <span class="bopomofo-small">ㄍㄥ</span>
                 </div>
-                <div class="vocabulary-item" onclick="showCharacterDetail('守', 'ㄕㄡˇ', '宀', 6, '上下結構', this)">
+                <div class="vocabulary-item" data-char="守" data-bopomofo="ㄕㄡˇ" data-radical="宀" data-strokes="6" data-structure="上下結構">
                     守 <span class="bopomofo-small">ㄕㄡˇ</span>
                 </div>
-                <div class="vocabulary-item" onclick="showCharacterDetail('夜', 'ㄧㄝˋ', '夕', 8, '上下結構', this)">
+                <div class="vocabulary-item" data-char="夜" data-bopomofo="ㄧㄝˋ" data-radical="夕" data-strokes="8" data-structure="上下結構">
                     夜 <span class="bopomofo-small">ㄧㄝˋ</span>
                 </div>
-                <div class="vocabulary-item" onclick="showCharacterDetail('晚', 'ㄨㄢˇ', '日', 11, '左右結構', this)">
+                <div class="vocabulary-item" data-char="晚" data-bopomofo="ㄨㄢˇ" data-radical="日" data-strokes="11" data-structure="左右結構">
                     晚 <span class="bopomofo-small">ㄨㄢˇ</span>
                 </div>
-                <div class="vocabulary-item" onclick="showCharacterDetail('北', 'ㄅㄟˇ', '匕', 5, '左右結構', this)">
+                <div class="vocabulary-item" data-char="北" data-bopomofo="ㄅㄟˇ" data-radical="匕" data-strokes="5" data-structure="左右結構">
                     北 <span class="bopomofo-small">ㄅㄟˇ</span>
                 </div>
-                <div class="vocabulary-item" onclick="showCharacterDetail('搖', 'ㄧㄠˊ', '手', 13, '左右結構', this)">
+                <div class="vocabulary-item" data-char="搖" data-bopomofo="ㄧㄠˊ" data-radical="手" data-strokes="13" data-structure="左右結構">
                     搖 <span class="bopomofo-small">ㄧㄠˊ</span>
                 </div>
             </div>
@@ -508,24 +544,24 @@
                 </div>
                 
                 <div class="info-section">
-                    <h3><i class="fas fa-language"></i> 成語</h3>
+                    <h3><i class="fas fa-book"></i> 成語</h3>
                     <ul id="char-idioms">
                         <li>等量齊觀</li>
                         <li>等閒視之</li>
-                        <li>罪加一等</li>
+                        <li>著作等身</li>
                     </ul>
                 </div>
                 
                 <div class="info-section">
-                    <h3><i class="fas fa-comment-alt"></i> 造句範例</h3>
+                    <h3><i class="fas fa-comment"></i> 造句</h3>
                     <ul id="char-sentences">
-                        <li>農夫天天<span class="highlight">等</span>著兔子來撞樹。</li>
-                        <li>請你稍<span class="highlight">等</span>一下。</li>
+                        <li>農夫天天守著幸運樹，<strong>等</strong>著兔子來撞樹。</li>
+                        <li>請你稍<strong>等</strong>一下，我馬上就來。</li>
                     </ul>
                 </div>
                 
                 <div class="info-section">
-                    <h3><i class="fas fa-lightbulb"></i> 字義解釋</h3>
+                    <h3><i class="fas fa-lightbulb"></i> 字義</h3>
                     <ul id="char-meaning">
                         <li>等候、待</li>
                         <li>相同、相等</li>
@@ -535,12 +571,8 @@
             </div>
             
             <div class="external-links">
-                <a href="https://pedia.cloud.edu.tw/Entry/Detail/?title=等" class="external-link" target="_blank" id="edu-link">
-                    <i class="fas fa-external-link-alt"></i> 教育百科 - 等
-                </a>
-                <a href="https://dict.idioms.moe.edu.tw/idiomList.jsp?idiom=等" class="external-link" target="_blank" id="idiom-link">
-                    <i class="fas fa-external-link-alt"></i> 成語典 - 等相關成語
-                </a>
+                <a href="https://pedia.cloud.edu.tw/Entry/Detail/?title=等" class="external-link" target="_blank">教育百科</a>
+                <a href="https://dict.idioms.moe.edu.tw/idiomList.jsp?idiom=等" class="external-link" target="_blank">成語典</a>
             </div>
         </section>
         
@@ -548,44 +580,156 @@
             <h2><span class="section-icon">3</span> 形近字比較</h2>
             <div class="similar-characters">
                 <div class="character-group">
-                    <h3><i class="fas fa-exchange-alt"></i> 夫 <span class="bopomofo">ㄈㄨ</span> vs 大 <span class="bopomofo">ㄉㄚˋ</span> vs 天 <span class="bopomofo">ㄊㄧㄢ</span></h3>
+                    <h3>夫 <span class="bopomofo">ㄈㄨ</span></h3>
                     <ul>
-                        <li>夫：夫妻、夫人、丈夫</li>
-                        <li>大：大家、大地、大人</li>
-                        <li>天：天空、今天、天氣</li>
+                        <li>夫妻</li>
+                        <li>夫人</li>
+                        <li>丈夫</li>
                     </ul>
                 </div>
                 
                 <div class="character-group">
-                    <h3><i class="fas fa-exchange-alt"></i> 路 <span class="bopomofo">ㄌㄨˋ</span> vs 格 <span class="bopomofo">ㄍㄜˊ</span> vs 故 <span class="bopomofo">ㄍㄨˋ</span></h3>
+                    <h3>大 <span class="bopomofo">ㄉㄚˋ</span></h3>
                     <ul>
-                        <li>路：路口、路燈、馬路</li>
-                        <li>格：空格、嚴格、格子</li>
-                        <li>故：故事、故意、故鄉</li>
+                        <li>大家</li>
+                        <li>大地</li>
+                        <li>大人</li>
                     </ul>
                 </div>
                 
                 <div class="character-group">
-                    <h3><i class="fas fa-exchange-alt"></i> 幸 <span class="bopomofo">ㄒㄧㄥˋ</span> vs 辛 <span class="bopomofo">ㄒㄧㄣ</span></h3>
+                    <h3>天 <span class="bopomofo">ㄊㄧㄢ</span></h3>
                     <ul>
-                        <li>幸：幸福、幸好、幸運</li>
-                        <li>辛：辛苦、辛勞、辛勤</li>
+                        <li>天空</li>
+                        <li>今天</li>
+                        <li>天氣</li>
                     </ul>
                 </div>
                 
                 <div class="character-group">
-                    <h3><i class="fas fa-exchange-alt"></i> 北 <span class="bopomofo">ㄅㄟˇ</span> vs 此 <span class="bopomofo">ㄘˇ</span></h3>
+                    <h3>路 <span class="bopomofo">ㄌㄨˋ</span></h3>
                     <ul>
-                        <li>北：北邊、北方、北風</li>
-                        <li>此：從此、因此、此地</li>
+                        <li>路口</li>
+                        <li>路燈</li>
+                        <li>馬路</li>
+                    </ul>
+                </div>
+                
+                <div class="character-group">
+                    <h3>格 <span class="bopomofo">ㄍㄜˊ</span></h3>
+                    <ul>
+                        <li>空格</li>
+                        <li>嚴格</li>
+                        <li>格子</li>
+                    </ul>
+                </div>
+                
+                <div class="character-group">
+                    <h3>故 <span class="bopomofo">ㄍㄨˋ</span></h3>
+                    <ul>
+                        <li>故事</li>
+                        <li>故意</li>
+                        <li>故鄉</li>
+                    </ul>
+                </div>
+                
+                <div class="character-group">
+                    <h3>幸 <span class="bopomofo">ㄒㄧㄥˋ</span></h3>
+                    <ul>
+                        <li>幸福</li>
+                        <li>幸好</li>
+                        <li>幸運</li>
+                    </ul>
+                </div>
+                
+                <div class="character-group">
+                    <h3>辛 <span class="bopomofo">ㄒㄧㄣ</span></h3>
+                    <ul>
+                        <li>辛苦</li>
+                        <li>辛勞</li>
+                        <li>辛勤</li>
+                    </ul>
+                </div>
+                
+                <div class="character-group">
+                    <h3>北 <span class="bopomofo">ㄅㄟˇ</span></h3>
+                    <ul>
+                        <li>北邊</li>
+                        <li>北方</li>
+                        <li>北風</li>
+                    </ul>
+                </div>
+                
+                <div class="character-group">
+                    <h3>此 <span class="bopomofo">ㄘˇ</span></h3>
+                    <ul>
+                        <li>從此</li>
+                        <li>因此</li>
+                        <li>此時</li>
+                    </ul>
+                </div>
+                
+                <div class="character-group">
+                    <h3>耕 <span class="bopomofo">ㄍㄥ</span></h3>
+                    <ul>
+                        <li>耕田</li>
+                        <li>耕種</li>
+                        <li>耕地</li>
+                    </ul>
+                </div>
+                
+                <div class="character-group">
+                    <h3>耘 <span class="bopomofo">ㄩㄣˊ</span></h3>
+                    <ul>
+                        <li>耕耘</li>
+                        <li>耘田</li>
+                        <li>耘草</li>
                     </ul>
                 </div>
             </div>
         </section>
         
-        <a href="#" class="download-btn"><i class="fas fa-download"></i> 下載學習資料</a>
-        <a href="https://cat87031.github.io/chinese8/" class="external-link" target="_blank" id="idiom-link">
-        <i class="fas fa-external-link-alt"></i> 第八課：角和腳
+        <section id="vocabulary-phrases">
+            <h2><span class="section-icon">4</span> 語詞學習</h2>
+            <div class="vocabulary-recognition">
+                <div class="recognition-list">
+                    <div class="recognition-item">
+                        <h3>兔子</h3>
+                        <p><span class="bopomofo">ㄊㄨˋ ㄗˇ</span></p>
+                    </div>
+                    <div class="recognition-item">
+                        <h3>農夫</h3>
+                        <p><span class="bopomofo">ㄋㄨㄥˊ ㄈㄨ</span></p>
+                    </div>
+                    <div class="recognition-item">
+                        <h3>夏天</h3>
+                        <p><span class="bopomofo">ㄒㄧㄚˋ ㄊㄧㄢ</span></p>
+                    </div>
+                    <div class="recognition-item">
+                        <h3>趕路</h3>
+                        <p><span class="bopomofo">ㄍㄢˇ ㄌㄨˋ</span></p>
+                    </div>
+                    <div class="recognition-item">
+                        <h3>幸運</h3>
+                        <p><span class="bopomofo">ㄒㄧㄥˋ ㄩㄣˋ</span></p>
+                    </div>
+                    <div class="recognition-item">
+                        <h3>以後</h3>
+                        <p><span class="bopomofo">ㄧˇ ㄏㄡˋ</span></p>
+                    </div>
+                    <div class="recognition-item">
+                        <h3>夜晚</h3>
+                        <p><span class="bopomofo">ㄧㄝˋ ㄨㄢˇ</span></p>
+                    </div>
+                    <div class="recognition-item">
+                        <h3>北風</h3>
+                        <p><span class="bopomofo">ㄅㄟˇ ㄈㄥ</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <a href="#" class="download-btn"><i class="fas fa-download"></i> 下載完整教學資源</a>
     </div>
 
     <script>
@@ -593,10 +737,10 @@
         const characterData = {
             '等': {
                 words: ['等待', '等等', '平等', '等候', '等級'],
-                idioms: ['等量齊觀', '等閒視之', '罪加一等', '三六九等'],
+                idioms: ['等量齊觀', '等閒視之', '著作等身', '等而下之'],
                 sentences: [
-                    '農夫天天<span class="highlight">等</span>著兔子來撞樹。',
-                    '請你稍<span class="highlight">等</span>一下。'
+                    '農夫天天守著幸運樹，<strong>等</strong>著兔子來撞樹。',
+                    '請你稍<strong>等</strong>一下，我馬上就來。'
                 ],
                 meaning: [
                     '等候、待',
@@ -607,41 +751,41 @@
                 idiomUrl: 'https://dict.idioms.moe.edu.tw/idiomList.jsp?idiom=等'
             },
             '兔': {
-                words: ['兔子', '白兔', '兔毛', '兔崽子', '玉兔'],
-                idioms: ['兔死狗烹', '兔死狐悲', '守株待兔', '動如脫兔'],
+                words: ['兔子', '白兔', '兔毛', '兔耳', '兔年'],
+                idioms: ['兔死狐悲', '守株待兔', '兔起鶻落', '狡兔三窟'],
                 sentences: [
-                    '一隻<span class="highlight">兔</span>子撞上樹。',
-                    '小白<span class="highlight">兔</span>很可愛。'
+                    '一隻<strong>兔</strong>子忙趕路，「烹」的一聲撞上樹。',
+                    '小白<strong>兔</strong>有長長的耳朵。'
                 ],
                 meaning: [
                     '哺乳動物，耳長尾短，善跳躍',
-                    '月亮中的玉兔',
-                    '十二生肖之一'
+                    '十二生肖之一',
+                    '月亮的別稱'
                 ],
                 eduUrl: 'https://pedia.cloud.edu.tw/Entry/Detail/?title=兔',
                 idiomUrl: 'https://dict.idioms.moe.edu.tw/idiomList.jsp?idiom=兔'
             },
             '撞': {
-                words: ['撞到', '撞擊', '碰撞', '撞見', '相撞'],
-                idioms: ['橫衝直撞', '招搖撞騙'],
+                words: ['撞樹', '撞到', '碰撞', '撞擊', '相撞'],
+                idioms: ['橫衝直撞', '招搖撞騙', '撞頭磕腦', '撞鐘伐鼓'],
                 sentences: [
-                    '兔子「烹」的一聲<span class="highlight">撞</span>上樹。',
-                    '他不小心<span class="highlight">撞</span>到門。'
+                    '「烹」的一聲<strong>撞</strong>上樹，農夫幸運得到一隻兔。',
+                    '他不小心<strong>撞</strong>到了門。'
                 ],
                 meaning: [
-                    '猛然碰擊',
-                    '偶然遇見',
+                    '衝擊、碰擊',
+                    '偶然相遇',
                     '試探、嘗試'
                 ],
                 eduUrl: 'https://pedia.cloud.edu.tw/Entry/Detail/?title=撞',
                 idiomUrl: 'https://dict.idioms.moe.edu.tw/idiomList.jsp?idiom=撞'
             },
             '農': {
-                words: ['農夫', '農民', '農業', '農場', '農田'],
-                idioms: ['不違農時', '士農工商'],
+                words: ['農夫', '農田', '農民', '農業', '農場'],
+                idioms: ['不違農時', '士農工商', '重農輕商', '農田水利'],
                 sentences: [
-                    '一個<span class="highlight">農</span>夫種了一塊田。',
-                    '<span class="highlight">農</span>業是國家的根本。'
+                    '一個<strong>農</strong>夫種了一塊田，田邊長著一棵樹。',
+                    '<strong>農</strong>夫們在田裡辛勤工作。'
                 ],
                 meaning: [
                     '耕種事業',
@@ -653,10 +797,10 @@
             },
             '夫': {
                 words: ['農夫', '夫妻', '夫人', '丈夫', '工夫'],
-                idioms: ['夫妻反目', '匹夫有責', '凡夫俗子', '結髮夫妻'],
+                idioms: ['匹夫之勇', '凡夫俗子', '結髮夫妻', '萬夫莫敵'],
                 sentences: [
-                    '一個農<span class="highlight">夫</span>種了一塊田。',
-                    '他們是恩愛<span class="highlight">夫</span>妻。'
+                    '一個農<strong>夫</strong>種了一塊田，田邊長著一棵樹。',
+                    '他的父<strong>夫</strong>是個醫生。'
                 ],
                 meaning: [
                     '成年男子的通稱',
@@ -667,15 +811,15 @@
                 idiomUrl: 'https://dict.idioms.moe.edu.tw/idiomList.jsp?idiom=夫'
             },
             '夏': {
-                words: ['夏天', '夏季', '盛夏', '夏至', '華夏'],
-                idioms: ['春去夏來', '夏雨雨人', '冬溫夏凊'],
+                words: ['夏天', '夏季', '夏日', '盛夏', '夏至'],
+                idioms: ['春去夏來', '夏雨雨人', '冬溫夏凊', '夏爐冬扇'],
                 sentences: [
-                    '<span class="highlight">夏</span>天天氣好。',
-                    '從<span class="highlight">夏</span>天等到冬天。'
+                    '<strong>夏</strong>天天氣好，農夫起得早，忙著去除草。',
+                    '<strong>夏</strong>天很熱，我們常去游泳。'
                 ],
                 meaning: [
                     '一年四季的第二季',
-                    '中國的古稱',
+                    '中國的稱呼',
                     '大的'
                 ],
                 eduUrl: 'https://pedia.cloud.edu.tw/Entry/Detail/?title=夏',
@@ -685,23 +829,23 @@
                 words: ['剛才', '剛剛', '剛好', '剛強', '剛正'],
                 idioms: ['剛正不阿', '剛愎自用', '血氣方剛', '以柔克剛'],
                 sentences: [
-                    '除草的工作<span class="highlight">剛</span>開始。',
-                    '他<span class="highlight">剛</span>剛離開。'
+                    '除草的工作<strong>剛</strong>開始，一隻兔子忙趕路。',
+                    '他<strong>剛</strong>剛離開教室。'
                 ],
                 meaning: [
                     '方才、剛才',
-                    '堅強、堅硬',
+                    '堅強、硬',
                     '恰好、正好'
                 ],
                 eduUrl: 'https://pedia.cloud.edu.tw/Entry/Detail/?title=剛',
                 idiomUrl: 'https://dict.idioms.moe.edu.tw/idiomList.jsp?idiom=剛'
             },
             '趕': {
-                words: ['趕路', '趕快', '趕走', '趕工', '趕集'],
-                idioms: ['趕盡殺絕', '你追我趕'],
+                words: ['趕路', '趕快', '趕忙', '趕走', '趕集'],
+                idioms: ['趕盡殺絕', '迎頭趕上', '趕鴨子上架', '你追我趕'],
                 sentences: [
-                    '一隻兔子忙<span class="highlight">趕</span>路。',
-                    '請<span class="highlight">趕</span>快完成作業。'
+                    '一隻兔子忙<strong>趕</strong>路，「烹」的一聲撞上樹。',
+                    '我們要<strong>趕</strong>快回家，天快黑了。'
                 ],
                 meaning: [
                     '加快行動',
@@ -712,11 +856,11 @@
                 idiomUrl: 'https://dict.idioms.moe.edu.tw/idiomList.jsp?idiom=趕'
             },
             '路': {
-                words: ['趕路', '路口', '路燈', '道路', '路上'],
-                idioms: ['路不拾遺', '一路順風', '半路出家', '輕車熟路'],
+                words: ['趕路', '路口', '路燈', '馬路', '道路'],
+                idioms: ['路不拾遺', '半路出家', '一路順風', '輕車熟路'],
                 sentences: [
-                    '一隻兔子忙趕<span class="highlight">路</span>。',
-                    '這條<span class="highlight">路</span>很寬敞。'
+                    '一隻兔子忙趕<strong>路</strong>，「烹」的一聲撞上樹。',
+                    '這條<strong>路</strong>通往市中心。'
                 ],
                 meaning: [
                     '供人車通行的道',
@@ -727,11 +871,11 @@
                 idiomUrl: 'https://dict.idioms.moe.edu.tw/idiomList.jsp?idiom=路'
             },
             '幸': {
-                words: ['幸運', '幸福', '幸好', '幸虧', '慶幸'],
-                idioms: ['幸災樂禍', '三生有幸', '不幸之幸'],
+                words: ['幸運', '幸福', '幸好', '幸虧', '榮幸'],
+                idioms: ['幸災樂禍', '三生有幸', '不幸中之幸', '行險徼幸'],
                 sentences: [
-                    '農夫<span class="highlight">幸</span>運得到一隻兔。',
-                    '他感到很<span class="highlight">幸</span>福。'
+                    '農夫<strong>幸</strong>運得到一隻兔。',
+                    '我們要珍惜<strong>幸</strong>福的生活。'
                 ],
                 meaning: [
                     '好運氣',
@@ -742,44 +886,44 @@
                 idiomUrl: 'https://dict.idioms.moe.edu.tw/idiomList.jsp?idiom=幸'
             },
             '運': {
-                words: ['幸運', '運氣', '運動', '運輸', '命運'],
+                words: ['幸運', '運動', '運氣', '運輸', '命運'],
                 idioms: ['運籌帷幄', '時來運轉', '官運亨通', '應運而生'],
                 sentences: [
-                    '農夫幸<span class="highlight">運</span>得到一隻兔。',
-                    '他的<span class="highlight">運</span>氣很好。'
+                    '農夫幸<strong>運</strong>得到一隻兔。',
+                    '他的<strong>運</strong>氣真好，中了獎。'
                 ],
                 meaning: [
                     '移動、轉動',
                     '氣數、命中註定的遭遇',
-                    '輸送、搬送'
+                    '使用、應用'
                 ],
                 eduUrl: 'https://pedia.cloud.edu.tw/Entry/Detail/?title=運',
                 idiomUrl: 'https://dict.idioms.moe.edu.tw/idiomList.jsp?idiom=運'
             },
             '以': {
                 words: ['以後', '以前', '以為', '所以', '可以'],
-                idioms: ['以貌取人', '以卵擊石', '全力以赴', '以德報怨'],
+                idioms: ['以貌取人', '以卵擊石', '以逸待勞', '以德報怨'],
                 sentences: [
-                    '那天<span class="highlight">以</span>後，農夫田也不耕。',
-                    '我可<span class="highlight">以</span>幫忙。'
+                    '那天<strong>以</strong>後，農夫田也不耕，草也不除。',
+                    '我<strong>以</strong>為你今天不會來。'
                 ],
                 meaning: [
                     '用、拿',
                     '因為、由於',
-                    '表示時間、範圍'
+                    '表示時間、方位、數量的界限'
                 ],
                 eduUrl: 'https://pedia.cloud.edu.tw/Entry/Detail/?title=以',
                 idiomUrl: 'https://dict.idioms.moe.edu.tw/idiomList.jsp?idiom=以'
             },
             '耕': {
-                words: ['耕田', '耕地', '耕種', '耕耘', '春耕'],
-                idioms: ['耕當問奴', '筆耕不輟', '深耕易耨'],
+                words: ['耕田', '耕種', '耕地', '耕耘', '春耕'],
+                idioms: ['耕當問奴', '筆耕不輟', '深耕易耨', '晝耕夜誦'],
                 sentences: [
-                    '農夫田也不<span class="highlight">耕</span>。',
-                    '農夫忙著<span class="highlight">耕</span>種。'
+                    '農夫田也不<strong>耕</strong>，草也不除。',
+                    '農夫在田裡<strong>耕</strong>種作物。'
                 ],
                 meaning: [
-                    '用犁翻鬆土地',
+                    '犁田、種田',
                     '比喻辛勤勞動',
                     '從事某種工作'
                 ],
@@ -787,56 +931,56 @@
                 idiomUrl: 'https://dict.idioms.moe.edu.tw/idiomList.jsp?idiom=耕'
             },
             '守': {
-                words: ['守著', '守候', '守護', '遵守', '保守'],
+                words: ['守著', '守候', '守護', '防守', '保守'],
                 idioms: ['守株待兔', '守口如瓶', '守身如玉', '墨守成規'],
                 sentences: [
-                    '天天<span class="highlight">守</span>著幸運樹。',
-                    '我們要遵<span class="highlight">守</span>規則。'
+                    '天天<strong>守</strong>著幸運樹，等著兔子來撞樹。',
+                    '他<strong>守</strong>在醫院門口等待消息。'
                 ],
                 meaning: [
                     '保護、護衛',
-                    '等待、等候',
-                    '遵循、保持'
+                    '保持、堅持',
+                    '等待、等候'
                 ],
                 eduUrl: 'https://pedia.cloud.edu.tw/Entry/Detail/?title=守',
                 idiomUrl: 'https://dict.idioms.moe.edu.tw/idiomList.jsp?idiom=守'
             },
             '夜': {
-                words: ['夜晚', '深夜', '夜市', '夜間', '黑夜'],
-                idioms: ['夜長夢多', '夜以繼日', '日夜兼程', '晝伏夜出'],
+                words: ['夜晚', '夜間', '深夜', '夜市', '夜校'],
+                idioms: ['夜以繼日', '日夜兼程', '夜長夢多', '晝伏夜出'],
                 sentences: [
-                    '從白天等到<span class="highlight">夜</span>晚。',
-                    '他工作到深<span class="highlight">夜</span>。'
+                    '從白天等到<strong>夜</strong>晚，從夏天等到冬天。',
+                    '<strong>夜</strong>晚的星空很美。'
                 ],
                 meaning: [
                     '從天黑到天亮的一段時間',
                     '昏暗的',
-                    '夜行的'
+                    '夜行性的'
                 ],
                 eduUrl: 'https://pedia.cloud.edu.tw/Entry/Detail/?title=夜',
                 idiomUrl: 'https://dict.idioms.moe.edu.tw/idiomList.jsp?idiom=夜'
             },
             '晚': {
                 words: ['夜晚', '晚上', '晚間', '傍晚', '晚飯'],
-                idioms: ['晚節不保', '相見恨晚', '早出晚歸'],
+                idioms: ['晚節不保', '相見恨晚', '早出晚歸', '大器晚成'],
                 sentences: [
-                    '從白天等到夜<span class="highlight">晚</span>。',
-                    '<span class="highlight">晚</span>上要早點睡覺。'
+                    '從白天等到夜<strong>晚</strong>，從夏天等到冬天。',
+                    '今天<strong>晚</strong>上我們去看電影。'
                 ],
                 meaning: [
-                    '黃昏、日落時分',
-                    '夜間',
-                    '時間較遲的'
+                    '日落後到深夜前的時間',
+                    '時間靠後的',
+                    '遲、不及時'
                 ],
                 eduUrl: 'https://pedia.cloud.edu.tw/Entry/Detail/?title=晚',
                 idiomUrl: 'https://dict.idioms.moe.edu.tw/idiomList.jsp?idiom=晚'
             },
             '北': {
-                words: ['北風', '北方', '北邊', '北部', '東北'],
-                idioms: ['南征北戰', '天南地北', '走南闖北', '追奔逐北'],
+                words: ['北風', '北方', '北邊', '北京', '北部'],
+                idioms: ['南來北往', '天南地北', '追奔逐北', '北面稱臣'],
                 sentences: [
-                    '只有<span class="highlight">北</span>風搖著樹。',
-                    '他來自<span class="highlight">北</span>方。'
+                    '只有<strong>北</strong>風搖著樹。',
+                    '<strong>北</strong>方的冬天很冷。'
                 ],
                 meaning: [
                     '方位名。與「南」相對',
@@ -847,11 +991,11 @@
                 idiomUrl: 'https://dict.idioms.moe.edu.tw/idiomList.jsp?idiom=北'
             },
             '搖': {
-                words: ['搖動', '搖晃', '搖擺', '搖椅', '搖籃'],
+                words: ['搖著', '搖動', '搖擺', '搖晃', '搖椅'],
                 idioms: ['搖旗吶喊', '搖搖欲墜', '搖身一變', '地動山搖'],
                 sentences: [
-                    '北風<span class="highlight">搖</span>著樹。',
-                    '小船在海上<span class="highlight">搖</span>晃。'
+                    '只有北風<strong>搖</strong>著樹。',
+                    '風<strong>搖</strong>動著樹枝。'
                 ],
                 meaning: [
                     '擺動、晃動',
@@ -864,16 +1008,22 @@
         };
         
         // 顯示生字詳情
-        function showCharacterDetail(character, bopomofo, radical, strokes, structure, element) {
+        function showCharacterDetail(event) {
+            // 獲取點擊元素的數據屬性
+            const charElement = event.currentTarget;
+            const character = charElement.getAttribute('data-char');
+            const bopomofo = charElement.getAttribute('data-bopomofo');
+            const radical = charElement.getAttribute('data-radical');
+            const strokes = charElement.getAttribute('data-strokes');
+            const structure = charElement.getAttribute('data-structure');
+            
             // 移除所有項目的active類
             document.querySelectorAll('.vocabulary-item').forEach(item => {
                 item.classList.remove('active');
             });
             
             // 為當前點擊的項目添加active類
-            if (element) {
-                element.classList.add('active');
-            }
+            charElement.classList.add('active');
             
             const detailSection = document.getElementById('character-detail');
             const data = characterData[character] || {
@@ -928,11 +1078,11 @@
             });
             
             // 更新外部連結
-            document.getElementById('edu-link').href = data.eduUrl;
-            document.getElementById('edu-link').innerHTML = '<i class="fas fa-external-link-alt"></i> 教育百科 - ' + character;
+            const eduLink = document.querySelector('.external-links a:nth-child(1)');
+            const idiomLink = document.querySelector('.external-links a:nth-child(2)');
             
-            document.getElementById('idiom-link').href = data.idiomUrl;
-            document.getElementById('idiom-link').innerHTML = '<i class="fas fa-external-link-alt"></i> 成語典 - ' + character + '相關成語';
+            eduLink.href = data.eduUrl;
+            idiomLink.href = data.idiomUrl;
             
             // 顯示詳情區塊
             detailSection.style.display = 'block';
@@ -945,13 +1095,49 @@
         function scrollToSection(sectionId) {
             const section = document.getElementById(sectionId);
             if (section) {
+                // 移除所有按鈕的active類
+                document.querySelectorAll('.nav-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // 為當前點擊的按鈕添加active類
+                document.querySelector(`.nav-btn[onclick="scrollToSection('${sectionId}')"]`).classList.add('active');
+                
+                // 添加高亮效果
+                section.classList.add('section-highlight');
+                
+                // 滾動到該區塊
                 section.scrollIntoView({ behavior: 'smooth' });
+                
+                // 2秒後移除高亮效果
+                setTimeout(() => {
+                    section.classList.remove('section-highlight');
+                }, 2000);
             }
         }
         
         // 初始顯示第一個生字的詳情
         document.addEventListener('DOMContentLoaded', function() {
-            showCharacterDetail('等', 'ㄉㄥˇ', '竹', 12, '上下結構');
+            // 為所有生字項目添加點擊事件監聽器
+            document.querySelectorAll('.vocabulary-item').forEach(item => {
+                item.addEventListener('click', showCharacterDetail);
+            });
+            
+            // 顯示第一個生字的詳情
+            const firstCharElement = document.querySelector('.vocabulary-item');
+            if (firstCharElement) {
+                // 創建一個模擬事件對象
+                const event = { currentTarget: firstCharElement };
+                showCharacterDetail(event);
+            }
+            
+            // 檢查URL中是否有錨點
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                setTimeout(() => {
+                    scrollToSection(targetId);
+                }, 500);
+            }
         });
     </script>
 </body>
